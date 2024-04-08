@@ -71,3 +71,67 @@ Fraction Fraction::Div(Fraction f)
     Shorten();
     return *this;
 }
+
+Fraction Fraction::operator+(Fraction f)
+{
+    Fraction result;
+    result.numerator = numerator * f.denominator + denominator * f.numerator;
+    result.denominator = denominator * f.denominator;
+    result.Shorten();
+    return result;
+}
+
+Fraction Fraction::operator+(int number)
+{
+    Fraction result;
+    result.numerator = numerator + denominator * number;
+    result.denominator = denominator;
+    result.Shorten();
+    return result;
+}
+
+Fraction Fraction::operator++()
+{
+    *this = *this + 1;
+    return *this;
+}
+
+Fraction Fraction::operator++(int)
+{
+    Fraction old = *this;
+    *this = *this + 1;
+    return old;
+}
+
+Fraction operator+(int number, const Fraction& f)
+{
+    Fraction result;
+    result.numerator = f.numerator + f.denominator * number;
+    result.denominator = f.denominator;
+    result.Shorten();
+    return result;
+    //return f + number;
+}
+
+bool operator<(const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denominator < f1.denominator * f2.numerator;
+}
+
+bool operator>=(const Fraction& f1, const Fraction& f2)
+{
+    return !(f1 < f2);
+}
+
+std::ostream& operator<<(std::ostream& out, const Fraction& f)
+{
+    out << "[" << f.numerator << "/" << f.denominator << "]";
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Fraction& f)
+{
+    in >> f.numerator;
+    in >> f.denominator;
+    return in;
+}

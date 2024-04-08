@@ -48,5 +48,24 @@ public:
     Fraction Subtraction(Fraction f);
     Fraction Mult(Fraction f);
     Fraction Div(Fraction f);
+
+    Fraction operator+(Fraction f);
+    Fraction operator+(int number);
+
+    Fraction operator-()
+    {
+        this->numerator = -this->numerator;
+        return *this;
+    }
+
+    Fraction operator++();
+    Fraction operator++(int);
+
+    friend Fraction operator+(int number, const Fraction& f);
+    friend bool operator<(const Fraction& f1, const Fraction& f2);
+    friend bool operator>=(const Fraction& f1, const Fraction& f2);
+
+    friend std::ostream& operator<<(std::ostream& out, const Fraction& f);
+    friend std::istream& operator>>(std::istream& in, Fraction& f);
 };
 
