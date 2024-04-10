@@ -22,6 +22,8 @@ int main()
     Fraction f3(2, 5);
     Fraction f4(11, 15);
 
+    f1.Numerator() = 4;
+    std::cout << f1.Numerator();
     //f1.PrintConsole();
     ++f1;
     //f1.PrintConsole();

@@ -8,6 +8,11 @@ void Fraction::SetNumerator(int numerator)
 
 int Fraction::GetNumerator() { return numerator; }
 
+int& Fraction::Numerator()
+{
+    return numerator;
+}
+
 void Fraction::SetDenominator(int denominator)
 {
     if (denominator != 0) this->denominator = denominator;

@@ -36,7 +36,10 @@ public:
     }
 
     void SetNumerator(int numerator);
-    int GetNumerator(); 
+    int GetNumerator();
+
+    int& Numerator();
+
     void SetDenominator(int denominator);
     unsigned int GetDenominator();
 
