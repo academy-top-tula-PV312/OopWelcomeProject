@@ -1,10 +1,24 @@
 ﻿#include <iostream>
 #include "Fraction.h"
 
+void FirstExamples();
+
 int main()
 {
-    int n{ 10 };
+    Fraction f1(2, 3);
+
+    double x = (double)f1 + 1.9;
+    std::cout << x << "\n";
+
+    /*int n{ (int)x };
+    int m = x;*/
     
+}
+
+void FirstExamples()
+{
+    int n{ 10 };
+
 
     /*Fraction f1;
     f1.SetNumerator(125);
@@ -39,13 +53,11 @@ int main()
 
     /*Fraction f6 = 10 + -f2;
     f6.PrintConsole();*/
-    
-    
+
+
     /*Fraction f5 = f1.Plus(f2)
                     .Subtraction(f3)
                     .Mult(f4);
     f5.PrintConsole();
     f1.PrintConsole();*/
-
-    
 }

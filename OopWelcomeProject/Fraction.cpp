@@ -86,26 +86,31 @@ Fraction Fraction::operator+(Fraction f)
     return result;
 }
 
-Fraction Fraction::operator+(int number)
-{
-    Fraction result;
-    result.numerator = numerator + denominator * number;
-    result.denominator = denominator;
-    result.Shorten();
-    return result;
-}
+//Fraction Fraction::operator+(int number)
+//{
+//    Fraction result;
+//    result.numerator = numerator + denominator * number;
+//    result.denominator = denominator;
+//    result.Shorten();
+//    return result;
+//}
 
 Fraction Fraction::operator++()
 {
-    *this = *this + 1;
+    *this = 1 + *this;
     return *this;
 }
 
 Fraction Fraction::operator++(int)
 {
     Fraction old = *this;
-    *this = *this + 1;
+    *this = 1 + *this;
     return old;
+}
+
+Fraction::operator double()
+{
+    return (double)numerator / denominator;
 }
 
 Fraction operator+(int number, const Fraction& f)

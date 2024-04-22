@@ -53,7 +53,7 @@ public:
     Fraction Div(Fraction f);
 
     Fraction operator+(Fraction f);
-    Fraction operator+(int number);
+    //Fraction operator+(int number);
 
     Fraction operator-()
     {
@@ -70,5 +70,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& out, const Fraction& f);
     friend std::istream& operator>>(std::istream& in, Fraction& f);
+
+    explicit operator double();
 };
 
